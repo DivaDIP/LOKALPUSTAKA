@@ -1,0 +1,40 @@
+.hero {
+    background: #D8A7B1;
+    color: white;
+    padding: 100px 0;
+}
+
+
+.section-title {
+    font-weight: bold;
+    color: #5a189a;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+
+.category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+}
+
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(128, 0, 128, 0.2);
+}
+
+
+.text-purple {
+    color: #6f42c1;
+}
+
+
+.bg-purple {
+    background-color: #6f42c1;
+    color: #fff;
+}

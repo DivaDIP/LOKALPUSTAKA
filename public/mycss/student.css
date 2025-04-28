@@ -1,0 +1,175 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f7f8fc;
+    color: #333;
+}
+
+
+/* header */
+.text-purple {
+    color: #6f42c1;
+}
+
+
+.bg-purple {
+    background-color: #6f42c1;
+    color: white;
+}
+
+
+.btn-purple {
+    background-color: #6f42c1;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+
+.btn-purple:hover {
+    background-color: #5e35b1;
+}
+
+
+.card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+.section-title {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+header {
+    background: linear-gradient(135deg, #7e57c2, #512da8);
+    padding: 20px 0;
+    color: white;
+}
+
+
+header .navbar-brand {
+    font-weight: 700;
+    font-size: 24px;
+}
+/* End Header */
+
+
+/* detail */
+.text-purple {
+    color: #6f42c1;
+}
+
+
+.bg-purple {
+    background-color: #6f42c1 !important;
+    color: white;
+}
+
+
+.btn-purple {
+    background-color: #6f42c1;
+    color: white;
+    border-radius: 6px;
+}
+
+
+.btn-purple:hover {
+    background-color: #5e35b1;
+    color: white;
+}
+/* end detail */
+
+
+/* Footer */
+footer {
+    background: #2e0f56;
+    color: #bbb;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+
+footer h5 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+
+footer a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+
+footer a:hover {
+    color: #fff;
+}
+/* End Footer */
+
+
+/* all book */
+.scrolling-wrapper {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.scrolling-wrapper > a {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    text-decoration: none;
+}
+
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+/* End all book */
+
+
+/* Responsif khusus tambahan */
+@media (max-width: 768px) {
+
+
+    h1,
+    .display-1,
+    .display-2,
+    .display-3,
+    .display-4,
+    .display-5 {
+        font-size: 1.8rem !important;
+    }
+
+
+    .lead {
+        font-size: 1rem;
+    }
+
+
+    .btn {
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1rem;
+    }
+
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+}
