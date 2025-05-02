@@ -115,7 +115,7 @@
     <div class="container">
         <h2 class="section-title text-center mb-5 text-purple">All Book</h2>
         <div class="row g-4">
-            @foreach ($books->take(6) as $book)
+            @foreach ($books->take(4) as $book)
             <div class="col-md-2">
                 <div class="card book-card h-100 bg-white border border-muted rounded-4">
                     <img src="{{ asset($book->cover) }}" class="card-img-top rounded-top-4" alt="img">
