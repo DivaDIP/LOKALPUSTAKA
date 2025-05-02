@@ -105,11 +105,11 @@
       {{-- end why choose us --}}
 
 {{-- book section --}}
-<section id="books" class="py-5">
+<section id="books" class="py-5 mb-5">
   <div class="container">
       <h2 class="section-title text-center mb-5 text-purple">Our Book</h2>
       <div class="row g-4">
-          @foreach ($books->take(6) as $book)
+          @foreach ($books->take(4) as $book)
           <div class="col-md-2">
               <div class="card book-card h-100 bg-white border border-muted rounded-4">
                   <img src="{{ asset($book->cover) }}" class="card-img-top rounded-top-4" alt="img">
@@ -126,10 +126,10 @@
 {{-- end book section --}}
 
 {{-- category --}}
-<section id="categories" class="py-5 bg-light">
+<section id="categories" class="py-5 mb-5">
   <div class="container">
       <div class="text-center mb-5">
-          <h2 class="fw-bold">Lebih dari Sekadar Kategori</h2>
+          <h2 class="fw-bold">Our Category</h2>
           <p class="text-muted">Temukan berbagai jenis buku yang bisa kamu jelajahi</p>
       </div>
 

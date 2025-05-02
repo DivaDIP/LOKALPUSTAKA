@@ -122,7 +122,6 @@ nav .nav-link {
 
 .book-card img {
   max-height: 280px;
-  width: auto;
   object-fit: contain;
   margin: 0 auto;
   display: block;
