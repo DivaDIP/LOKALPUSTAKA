@@ -107,6 +107,7 @@ nav .nav-link {
     background-color: transparent;
     padding: 12px 24px;
     transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .book-card:hover {
