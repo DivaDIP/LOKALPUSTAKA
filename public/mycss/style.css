@@ -1,40 +1,239 @@
-.hero {
-    background: #D8A7B1;
-    color: white;
-    padding: 100px 0;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #EEEEEE;
+  color: #1D1D1D;
+}
+/* Navbar custom centering */
+header .container {
+    max-width: 1140px; /* Biar gak melebar banget */
 }
 
+nav .nav-link {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.btn-nav {
+    background-color: #444444;
+    color: #ffffff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-nav:hover {
+    background-color: #BBBBBB;
+    color: #444444;
+}
+/* end navbar */
+
+/* hero section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
+  object-fit: cover;
+}
+
+.hero-section h1 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-section form {
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.btn-hero {
+  color: #666666;
+}
+
+.btn-hero:hover {
+   background-color: #BBBBBB;
+  color: #444444;
+  box-shadow: 0 0 8px rgba(111, 66, 193, 0.4);
+}
+/* end hero section */
+
+/* card section */
+.why-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .5s all-ease;
+    will-change: transform;
+    cursor: pointer;
+  }
+
+  .why-card:hover {
+    animation: bounce .6s;
+  }
+
+  .why-card:hover h5 {
+    color: #837F76; /* playful color on hover */
+  }
+
+  .why-card:hover p {
+    color: #ffffff;
+  }
+/* end card section */
+
+/* book section */
+.popular-books {
+  border-radius: 20px;
+  margin-top: 5rem;
+  cursor: pointer;
+}
 
 .section-title {
-    font-weight: bold;
-    color: #5a189a;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-
-.card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
+.section-subtitle {
+  color: #6c757d;
+  font-size: 1rem;
 }
 
+.book-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  background-color: #ffff;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+}
 
+.book-card:hover {
+  border: 2px solid #2E7D32;
+  background-color: white;
+  color: #2E7D32;
+}
+
+.book-card:hover {
+  animation: bounce 0.6s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+  max-height: 280px;
+  width: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  padding: 1rem;
+}
+
+.book-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.book-author {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.badge-category {
+  background-color: #d9a7ff;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.75rem;
+}
+
+  /* Keyframes for bounce effect */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(5px);
+    }
+  }
+
+/* end book section */
+
+/* category section */
 .category-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 1rem;
+  border: none;
+  border-radius: 20px;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
 }
-
 
 .category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(128, 0, 128, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
+.icon-circle {
+  background: #444444;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(142, 68, 173, 0.3);
+}
+/* end category section */
 
-.text-purple {
-    color: #6f42c1;
+
+/* Footer */
+.footer-dark {
+  background-color: #777777; /* Dark green style */
+  color: #e0e0e0;
 }
 
-
-.bg-purple {
-    background-color: #6f42c1;
-    color: #fff;
+.footer-link {
+  color: #DDDDDD;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-dark input.form-control {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: white;
+}
+
+.footer-dark .form-control::placeholder {
+  color: #bbb;
+}
+
+.footer-dark .form-check-input {
+  background-color: transparent;
+  border-color: #aaa;
+}
+
+.footer-dark .form-check-label {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.footer-dark hr {
+  opacity: 0.2;
+}
+
+.icon-footer {
+  color: #ffffff;
+}
+
+/* End Footer */

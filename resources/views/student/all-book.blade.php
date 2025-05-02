@@ -3,7 +3,7 @@
 
 
 @section('content')
-<section class="py-5 min-vh-100 bg-light">
+<section class="py-5 min-vh-100 ">
     <div class="container">
         <h2 class="mb-4 text-purple fw-bold">Semua Buku Berdasarkan Kategori</h2>
 

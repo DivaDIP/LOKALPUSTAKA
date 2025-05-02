@@ -9,104 +9,150 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('mycss/style.css') }}">
-   
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
 </head>
 
 
-<body>
+<body style="background-color: #EEEEEE;">
 
-
-    <header class="bg-white shadow-sm sticky-top">
-        <div class="container py-3 d-flex justify-content-between align-items-center">
-            <h3 class="text-purple m-0">E-Library IDN</h3>
-            <nav>
-                <a href="#books" class="mx-2 text-dark">Buku Terbaru</a>
-                <a href="#categories" class="mx-2 text-dark">Kategori</a>
-                <a href="#testimonials" class="mx-2 text-dark">Testimoni</a>
-                <a href="#cta" class="btn btn-purple text-white ms-3">Masuk</a>
-            </nav>
+    <header class="shadow-sm sticky-top bg-white mb-2">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <!-- Logo -->
+                <a href="#" class="navbar-brand fw-bold text-dark fs-4">PustakaLoka</a>
+    
+                <!-- Menu Tengah -->
+                <nav class="d-flex align-items-center gap-4">
+                    <a href="#books" class="nav-link text-dark">Our Books</a>
+                    <a href="#categories" class="nav-link text-dark">All Category</a>
+                    <a href="#testimonials" class="nav-link text-dark">Our Testimoni</a>
+                    <a href="#cta" class="nav-link text-dark"></a>
+                </nav>
+    
+                <!-- Button -->
+                <a href="{{ route('login') }}" class="btn btn-nav fw-semibold">Get Started</a>
+            </div>
         </div>
     </header>
 
-
-    <section class="hero text-center">
+{{-- hero section --}}
+   <section class="hero-section mt-5 mb-5">
         <div class="container">
-            <h1 class="display-4 fw-bold">Selamat Datang di E-Library</h1>
-            <p class="lead">Perpustakaan digital SMK IDN Boarding School Akhwat, lengkap, modern, dan islami.</p>
-            <a href="#books" class="btn btn-light btn-lg mt-4">Lihat Buku</a>
+          <div class="row align-items-center">
+            
+            <!-- Kiri: Text -->
+            <div class="col-md-6">
+              <h1 class="fw-bold mb-3" style="font-size: 2.8rem; color: #1d1d1d;">
+                Find the book <br> you’re looking for <br> easier to read.
+              </h1>
+              <p class="text-muted mb-4" style="font-size: 1rem;">
+                The most appropriate book site to reach books
+              </p>
+      
+              <!-- Search Bar -->
+              <form class="d-flex">
+                <input type="text" class="form-control form-control-lg rounded-start-pill" placeholder="Find your favorite book here...">
+                <button type="submit" class="btn rounded-end-pill px-4 text-white fw-bold" style="background-color: #666666;">
+                  Search
+                </button>
+              </form>
+            </div>
+      
+            <!-- Kanan: Gambar -->
+            <div class="col-md-6 text-center mt-5 mt-md-0">
+              <img src="{{ asset('image/holding-book.svg')}}" alt="Stack of Books" class="img-fluid">
+            </div>
+      
+          </div>
         </div>
-    </section>
+      </section>
+      {{-- end hero section --}}
 
-
-    <section id="features" class="py-5">
+      {{-- why choose us --}}
+      <section class="why-section py-5 mt-5 pt-5 mb-12">
         <div class="container text-center">
-            <h2 class="section-title mb-4">Kenapa Pilih E-Library IDN?</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <i class="mdi mdi-book-open-page-variant text-purple fs-1"></i>
-                    <h5 class="mt-2">Koleksi Lengkap</h5>
-                    <p>Buku pelajaran, fiksi, agama, teknologi, dan masih banyak lagi.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="mdi mdi-cellphone-link text-purple fs-1"></i>
-                    <h5 class="mt-2">Akses Mudah</h5>
-                    <p>Buka perpustakaan dari perangkat manapun, kapanpun.</p>
-                </div>
-                <div class="col-md-4">
-                    <i class="mdi mdi-account-group text-purple fs-1"></i>
-                    <h5 class="mt-2">Untuk Semua</h5>
-                    <p>Siswa dan guru bisa mengakses sesuai kebutuhan masing-masing.</p>
-                </div>
+          <h2 class="fw-bold mb-4">Why Choose Us?</h2>
+          <p class="mb-5 text-muted">We provide the best books for all ages with a simple, fun and efficient experience.</p>
+          <div class="row g-4 justify-content-center">
+            
+            <div class="why-card col-md-4">
+              <div class="p-4 rounded-4 why-card h-100" style="background-color: #BBBBBB;">
+                <h5 class="fw-semibold mb-2">Easy to Use</h5>
+                <p class="mb-0 text-muted">Our platform is designed with simplicity in mind, making it easy to find your next favorite book.</p>
+              </div>
             </div>
+            
+            <div class="why-card col-md-4">
+              <div class="p-4 rounded-4 why-card h-100" style="background-color: #BBBBBB;">
+                <h5 class="fw-semibold mb-2">Wide Collection</h5>
+                <p class="mb-0 text-muted">Access thousands of books, from academic materials to novels and self-help books.</p>
+              </div>
+            </div>
+      
+            <div class="why-card col-md-4">
+              <div class="p-4 rounded-4 why-card h-100" style="background-color: #BBBBBB;">
+                <h5 class="fw-semibold mb-2">Verified Sources</h5>
+                <p class="mb-0 text-muted">All books are curated and uploaded by verified users and professionals.</p>
+              </div>
+            </div>
+      
+          </div>
         </div>
-    </section>
+      </section>
+      {{-- end why choose us --}}
 
+{{-- book section --}}
+<section id="books" class="py-5">
+  <div class="container">
+      <h2 class="section-title text-center mb-5 text-purple">Our Book</h2>
+      <div class="row g-4">
+          @foreach ($books->take(6) as $book)
+          <div class="col-md-2">
+              <div class="card book-card h-100 bg-white border border-muted rounded-4">
+                  <img src="{{ asset($book->cover) }}" class="card-img-top rounded-top-4" alt="img">
+                  <div class="card-body text-center px-2 py-3">
+                      <h6 class="text-dark fw-semibold mb-2" style="font-size: 0.9rem;">{{ $book->title }}</h6>
+                      <span class="d-inline-block text-muted small">{{ $book->category->name }}</span>
+                  </div>
+              </div>
+          </div>
+          @endforeach
+      </div>
+  </div>
+</section>
+{{-- end book section --}}
 
-    <section id="books" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center mb-4">Buku Terbaru</h2>
-            <div class="row">
-                @foreach($books->take(4) as $book)
-                <div class="col-md-3 mb-3">
-                    <div class="card h-100">
-                        <img src="{{ asset($book->cover) }}" class="card-img-top" alt="{{ $book->title }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $book->title }}</h5>
-                            <p class="card-text">{{ Str::limit($book->description, 100) }}</p>
-                            <span class="badge bg-purple">{{ $book->category->name }}</span>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-            <div class="text-center mt-3">
-                <a href="{{ route('book') }}" class="btn btn-purple">Lihat Semua Buku</a>
-            </div>
-        </div>
-    </section>
+{{-- category --}}
+<section id="categories" class="py-5 bg-light">
+  <div class="container">
+      <div class="text-center mb-5">
+          <h2 class="fw-bold">Lebih dari Sekadar Kategori</h2>
+          <p class="text-muted">Temukan berbagai jenis buku yang bisa kamu jelajahi</p>
+      </div>
 
+      <div class="row justify-content-center g-4">
+          @foreach ($categories as $category)
+          <div class="col-lg-3 col-md-4 col-sm-6 d-flex">
+              <div class="category-card text-center w-100 category-card p-4">
+                  <div class="mb-3">
+                      <div class="icon-circle mx-auto">
+                          <i class="bi bi-book fs-2 text-white"></i>
+                      </div>
+                  </div>
+                  <h5 class="fw-semibold">{{ $category->name }}</h5>
+                  <p class="text-muted mb-0">Koleksi buku seputar {{ strtolower($category->name) }} untuk menambah wawasanmu.</p>
+              </div>
+          </div>
+          @endforeach
+      </div>
+  </div>
+</section>
+{{-- end category --}}
 
-    <section id="categories" class="py-5 bg-white">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Kategori Buku</h2>
-            <div class="row justify-content-center">
-                @foreach ($categories as $category)
-                <div class="col-md-3 col-sm-6 mb-4">
-                    <div class="card shadow-sm border-0 h-100 category-card text-center">
-                        <div class="card-body">
-                            <div class="category-icon mb-3">
-                                <i class="bi bi-bookmarks-fill text-purple fs-1"></i>
-                            </div>
-                            <h5 class="card-title text-dark">{{ $category->name }}</h5>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-
+{{-- testimonial section --}}
     <section id="testimonials" class="py-5 bg-light">
         <div class="container text-center">
             <h2 class="section-title mb-4">Apa Kata Mereka?</h2>
@@ -132,32 +178,77 @@
             </div>
         </div>
     </section>
+{{-- end testimonial section --}}
 
+{{-- footer --}}
+<footer class="footer-dark text-white py-5">
+  <div class="container">
+    <div class="row gy-4">
 
-    <section id="cta" class="py-5 text-center" style="background-color: #9d4edd;">
-        <div class="container text-white">
-            <h2 class="mb-3">Siap Menjelajah Ilmu?</h2>
-            <p>Gabung sekarang dan temukan buku-buku menarik setiap harinya.</p>
-            <a href="{{ route('login') }}" class="btn btn-light">Masuk Sekarang</a>
+      <!-- Left Links -->
+      <div class="col-md-6 col-lg-4">
+        <h5 class="fw-bold mb-3">PustakaLoka</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#" class="footer-link">Home</a></li>
+          <li><a href="#" class="footer-link">Our Books</a></li>
+          <li><a href="#" class="footer-link">All Books</a></li>
+          <li><a href="#" class="footer-link">About us</a></li>
+        </ul>
+      </div>
+
+      <!-- Mid Links -->
+      <div class="col-md-6 col-lg-4">
+        <ul class="list-unstyled small mt-md-4 pt-md-2">
+          <li><a href="#" class="footer-link">Consumer care</a></li>
+          <li><a href="#" class="footer-link">Alumni</a></li>
+          <li><a href="#" class="footer-link">Chobani® Canada</a></li>
+          <li><a href="#" class="footer-link">Chobani® Mexico</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Newsletter -->
+      <div class="col-lg-4">
+        <p class="small">Get the freshest Chobani news</p>
+        <form class="d-flex mb-2">
+          <input type="email" class="form-control me-2" placeholder="Your email here">
+          <button class="btn btn-outline-light">Subscribe</button>
+        </form>
+        <div class="form-check small">
+          <input class="form-check-input" type="checkbox" id="ageCheck">
+          <label class="form-check-label" for="ageCheck">
+            By checking the box, you agree that you are at least 16 years of age.
+          </label>
         </div>
-    </section>
+      </div>
 
+    </div>
 
-    <footer class="bg-dark text-white py-4">
-        <div class="container d-flex justify-content-between flex-wrap">
-            <div>
-                <h5>E-Library IDN</h5>
-                <p class="small">Perpustakaan digital SMK IDN Boarding School Akhwat.</p>
-            </div>
-            <div>
-                <h6>Kontak</h6>
-                <p class="small">Jl. Raya Cileungsi - Jonggol KM. 5, Cileungsi, Bogor</p>
-                <p class="small">Email: info@idn.sch.id</p>
-            </div>
-        </div>
-        <div class="text-center mt-3 small">&copy; 2025 IDN Akhwat. All rights reserved.</div>
-    </footer>
+    <!-- Social Media -->
+    <div class="icon-footer d-flex justify-content-start gap-3 mt-4" style="color: #ffff;">
+      <a href="#" class="text-white-50 fs-5"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-white-50 fs-5"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-white-50 fs-5"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="text-white-50 fs-5"><i class="bi bi-pinterest"></i></a>
+      <a href="#" class="text-white-50 fs-5"><i class="bi bi-youtube"></i></a>
+    </div>
 
+    <hr class="border-top mt-4 border-light-subtle">
+
+    <!-- Bottom Links -->
+    <div class="d-flex flex-wrap justify-content-start small text-white-50 gap-3">
+      <a href="#" class="footer-link">Website Terms</a>
+      <a href="#" class="footer-link">Privacy Policy</a>
+      <a href="#" class="footer-link">Accessibility Statement</a>
+      <a href="#" class="footer-link">CA Transparency</a>
+      <a href="#" class="footer-link">Supplier Code</a>
+      <a href="#" class="footer-link">Do Not Sell My Info</a>
+    </div>
+
+    <div class="small text-white-50 mt-2">&copy; 2025 PustakaLoka, Diva. All Rights Reserved.</div>
+  </div>
+</footer>
+
+{{-- end footer --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

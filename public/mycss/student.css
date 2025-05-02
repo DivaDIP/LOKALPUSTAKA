@@ -1,140 +1,417 @@
 body {
-    font-family: 'Inter', sans-serif;
-    background: #f7f8fc;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background: #EEEEEE;
+    color: #1D1D1D;
 }
 
 
 /* header */
-.text-purple {
-    color: #6f42c1;
+/* Navbar Custom Styles */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
 }
 
-
-.bg-purple {
-    background-color: #6f42c1;
-    color: white;
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #212529;
 }
 
-
-.btn-purple {
-    background-color: #6f42c1;
-    color: white;
-    border-radius: 8px;
-    transition: 0.3s ease;
+.navbar-nav .nav-link {
+    color: #212529;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-
-.btn-purple:hover {
-    background-color: #5e35b1;
+.btn-nav {
+    background-color: #444444;
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
 }
 
+.btn-nav:hover {
+    background-color: #BBBBBB;
+    color: #444444;
+}
 
+.sticky-top {
+    z-index: 1030; /* pastikan di atas elemen lain */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.navbar {
+    animation: bounceDown 0.8s ease forwards;
+}
+
+/* Default navbar link style */
+.navbar-nav .nav-link {
+    position: relative;
+    color: #1D1D1D; /* atau #6f42c1 untuk ungu */
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover effect: underline grow from center */
+  .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Ganti sesuai tema */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .navbar-nav .nav-link:hover::after {
+    width: 80%;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #d1c4e9; /* efek warna saat hover (ungu muda) */
+  }
+
+  .navbar-nav .nav-link.active {
+    color: #f3e5f5;
+    font-weight: 600;
+  }
+  
+  
+
+@keyframes bounceDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    60% {
+        transform: translateY(20px);
+    }
+    80% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#mainNavbar {
+    transition: all 0.4s ease;
+    background-color: transparent;
+}
+
+.navbar-scrolled {
+    background-color: #ffd36b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideReveal 0.4s ease forwards;
+}
+
+@keyframes slideReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* End Header */
+
+/* hero section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+
+.hero-section h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-section form {
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.btn-hero {
+    color: #666666;
+}
+
+.btn-hero:hover {
+     background-color: #BBBBBB;
+    color: #444444;
+    box-shadow: 0 0 8px rgba(111, 66, 193, 0.4);
+}
+/* end hero section */
+
+/* book section */
+#best-seller {
+    padding: 3rem 0;
+    background-color: #fff;
+}
+
+/* Heading */
+#best-seller h2 {
+    font-size: 1.75rem;
+    border-bottom: 3px solid #0d6efd;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+}
+
+/* Card styling */
 .card {
     border: none;
-    border-radius: 16px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    transition: 0.3s ease;
+    transition: transform 0.2s ease-in-out;
 }
-
 
 .card:hover {
     transform: translateY(-5px);
 }
 
-
-.section-title {
-    font-weight: 700;
+/* Book cover */
+.popular-books {
+    border-radius: 20px;
+    margin-top: 5rem;
+    cursor: pointer;
+    background-color: #EDE1D5;
+  }
+  
+  .section-title {
     font-size: 2rem;
-}
-
-
-header {
-    background: linear-gradient(135deg, #7e57c2, #512da8);
-    padding: 20px 0;
-    color: white;
-}
-
-
-header .navbar-brand {
     font-weight: 700;
-    font-size: 24px;
+  }
+  
+  .section-subtitle {
+    color: #6c757d;
+    font-size: 1rem;
+  }
+  
+  .book-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: transparent;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+
+   .book-card:hover {
+    animation: bounce 0.5s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  } 
+  
+  .book-card .card-img-top {
+    transition: transform 0.3s ease;
+  }
+  
+  .book-card:hover .card-img-top {
+    transform: translateY(-10px);  /* Efek parallax: menggeser gambar sedikit ke atas */
+  }
+   
+  .book-card img {
+    max-height: 280px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    padding: 1rem;
+  }
+  
+  .book-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .book-author {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  .badge-category {
+    background-color: #d9a7ff;
+    color: #fff;
+    border-radius: 1rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+
+
+    /* Keyframes for bounce effect */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      30% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(5px);
+      }
+    }
+  
+  /* end book section */
+
+/* search */
+/* Section Judul */
+.section-title {
+    font-weight: 600;
+    font-size: 2rem;
+    animation: fadeInDown 0.6s ease-in-out;
 }
-/* End Header */
 
-
-/* detail */
-.text-purple {
-    color: #6f42c1;
+/* Search bar container */
+.search-bar {
+    background-color: #EEEEEE;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 600px;
+    transition: box-shadow 0.3s ease;
 }
 
-
-.bg-purple {
-    background-color: #6f42c1 !important;
-    color: white;
+.search-bar:focus-within {
+    box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.15);
 }
 
+/* Input styling */
+.search-bar input {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    color: #333;
+    background-color: transparent;
+    outline: none;
+    transition: background-color 0.3s;
+}
 
+/* Tombol Cari */
 .btn-purple {
-    background-color: #6f42c1;
-    color: white;
-    border-radius: 6px;
+    background-color: #666666;
+    color: #fff;
+    transition: all 0.3s ease;
 }
-
 
 .btn-purple:hover {
-    background-color: #5e35b1;
-    color: white;
+    background-color: #BBBBBB;
+    color: #444444;
+    box-shadow: 0 0 8px rgba(111, 66, 193, 0.4);
 }
-/* end detail */
+
+/* end search */
 
 
 /* Footer */
-footer {
-    background: #2e0f56;
-    color: #bbb;
-    padding: 40px 0;
-    margin-top: 50px;
-}
-
-
-footer h5 {
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-
-footer a {
-    color: #bbb;
+.footer-dark {
+    background-color: #777777; /* Dark green style */
+    color: #e0e0e0;
+  }
+  
+  .footer-link {
+    color: #DDDDDD;
     text-decoration: none;
-}
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .footer-dark input.form-control {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: white;
+  }
+  
+  .footer-dark .form-control::placeholder {
+    color: #bbb;
+  }
+  
+  .footer-dark .form-check-input {
+    background-color: transparent;
+    border-color: #aaa;
+  }
+  
+  .footer-dark .form-check-label {
+    color: #aaa;
+    font-size: 0.85rem;
+  }
+  
+  .footer-dark hr {
+    opacity: 0.2;
+  }
+  
+  .icon-footer {
+    color: #ffffff;
+  }
 
-
-footer a:hover {
-    color: #fff;
-}
 /* End Footer */
 
 
 /* all book */
-.scrolling-wrapper {
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-}
-
-
-.scrolling-wrapper > a {
-    scroll-snap-align: start;
-    flex: 0 0 auto;
-    text-decoration: none;
-}
-
-
-.book-card:hover {
+.text-purple {
+    color: #1D1D1D;
+  }
+  
+  h2, h4 {
+    animation: fadeInUp 0.6s ease both;
+  }
+  
+  /* Book Card Style */
+  .book-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+  }
+  
+  .book-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
+    box-shadow: 0 8px 16px rgba(111, 66, 193, 0.15);
+  }
+  
+  /* Text Truncate */
+  .text-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  /* Scrolling Wrapper */
+  .scrolling-wrapper {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+  }
+  
+  .scrolling-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .scrolling-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrolling-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(111, 66, 193, 0.4);
+    border-radius: 4px;
+  }
+  
+  /* Animasi */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
 /* End all book */
 
 
@@ -173,3 +450,21 @@ footer a:hover {
         font-size: 1.2rem;
     }
 }
+
+/* animasi scroll */
+/* Gaya awal sebelum muncul */
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(3px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform, filter;
+  }
+  
+  .animate.show {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  
+  /* animasi scroll */

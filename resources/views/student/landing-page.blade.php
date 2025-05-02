@@ -4,70 +4,153 @@
 @section('content')
     
 
-<!-- Hero Section -->
-<section class="py-5" style="background: linear-gradient(135deg, #7e57c2, #512da8); color: white;">
-    <div class="container text-center">
-        <h1 class="fw-bold display-5 display-md-4 display-lg-3">Selamat Datang di E-Library</h1>
-        <p class="lead fs-5 fs-md-6 fs-lg-6 mt-3 mb-4">Temukan, baca, dan pinjam buku favoritmu dari genggamanmu.</p>
-        <a href="#books" class="btn btn-light text-purple fw-semibold px-4 py-2">Lihat Buku Terbaru</a>
+{{-- hero section --}}
+<section class="animate hero-section mt-5 mb-5">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- Kiri: Text -->
+        <div class="col-md-6">
+          <h1 class="fw-bold mb-3" style="font-size: 2.8rem;">
+            Find the book you’re looking for <br> easier to read.
+          </h1>
+          <p class="text-muted mb-4" style="font-size: 1rem;">
+            The most appropriate book site to reach books
+          </p>
+  
+          <!-- Search Bar -->
+          <form class="d-flex">
+            <button class="btn btn-hero rounded-end-pill px-4 text-white fw-bold" style="background-color: #666666;">
+              Search
+            </button>
+          </form>
+        </div>
+  
+        <!-- Kanan: Gambar -->
+        <div class="col-md-6 text-center mt-5 mt-md-0">
+          <img src="{{ asset('image/holding-book.svg')}}" alt="Stack of Books" class="img-fluid">
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  {{-- end hero section --}}
+
+  {{-- services --}}
+  <section class="animate py-3 border-top border-bottom mb-5" style="background-color: #ffff;">
+    <div class="container">
+        <div class="row text-center g-3">
+            <div class="col-6 col-md-3">
+                <i class="bi bi-cart3 fs-4 text-secondary"></i>
+                <div class="mt-2">
+                    <small class="fw-semibold d-block">Free Shipping</small>
+                    <small class="text-muted">Over 99.99€</small>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <i class="bi bi-arrow-repeat fs-4 text-secondary"></i>
+                <div class="mt-2">
+                    <small class="fw-semibold d-block">90 Days Return</small>
+                    <small class="text-muted">Goods issue only</small>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <i class="bi bi-shield-lock fs-4 text-secondary"></i>
+                <div class="mt-2">
+                    <small class="fw-semibold d-block">Secure Payments</small>
+                    <small class="text-muted">100% Safe</small>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <i class="bi bi-headset fs-4 text-secondary"></i>
+                <div class="mt-2">
+                    <small class="fw-semibold d-block">24/7 Support</small>
+                    <small class="text-muted">Always ready</small>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+  {{-- end services --}}
 
 <!-- Buku Terbaru -->
-<section id="books" class="py-5 bg-light">
+<section id="books" class="animate py-5">
     <div class="container">
-        <h2 class="section-title text-center mb-4 text-purple">Buku Terbaru</h2>
-        <div class="row">
-
+        <h2 class="section-title text-center mb-5 text-purple">Our Book</h2>
+        <div class="row g-4">
             @foreach ($books->take(6) as $book)
-            <div class="col-md-2 mb-4">
-                <div class="card h-100">
-                    <img src="{{ asset($book->cover) }}" class="card-img-top" alt="img">
-                    <div class="card-body">
-                        <h5 class="card-title text-purple">{{ $book->title }}</h5>
-                        <span class="badge bg-purple">{{ $book->category->name }}</span>
+            <div class="col-md-2">
+                <div class="card book-card h-100 bg-white border border-muted rounded-4">
+                    <img src="{{ asset($book->cover) }}" class="card-img-top rounded-top-4" alt="img">
+                    <div class="card-body text-center px-2 py-3">
+                        <h6 class="text-dark fw-semibold mb-2" style="font-size: 0.9rem;">{{ $book->title }}</h6>
+                        <span class="d-inline-block text-muted small">{{ $book->category->name }}</span>
                     </div>
                 </div>
             </div>
             @endforeach
-
-        </div>
-        <div class="text-center mt-4">
-            <a href="{{ route('student.all.books') }}" class="btn btn-purple px-4">Lihat Semua Buku</a>
         </div>
     </div>
 </section>
+{{-- end buku terbaru --}}
 
 <!-- Pencarian Buku -->
-<section id="search" class="py-5 bg-white">
+<section id="search" class="animate py-5 mb-5 mt-5" style="background-color: #FFFF;">
     <div class="container">
-        <h2 class="section-title text-center text-purple mb-4">Cari Buku</h2>
+        <h2 class="section-title text-center text-purple mb-4">Search Book</h2>
         <form action="#" method="GET" class="d-flex justify-content-center">
-            <input type="text" name="keyword" class="form-control w-50 rounded-start" placeholder="Cari berdasarkan judul, penulis...">
-            <button type="submit" class="btn btn-purple rounded-end px-4">Cari</button>
+            <div class="search-bar d-flex align-items-center shadow-sm">
+                <span class="px-3 text-muted"><i class="bi bi-search"></i></span>
+                <input type="text" name="keyword" class="form-control border-0 bg-transparent" style="background-color: #EEEEEE;" placeholder="Cari berdasarkan judul, penulis...">
+                <button type="submit" class="btn btn-purple rounded-pill px-4 ms-2">Cari</button>
+            </div>
         </form>
     </div>
 </section>
 
-<!-- Semua Buku -->
-<section id="all-books" class="py-5 bg-light">
+{{-- end pencarian buku --}}
+
+<!-- Buku ALL -->
+<section id="books" class="animate py-5">
     <div class="container">
-        <h2 class="section-title text-center text-purple mb-4">Semua Buku</h2>
-        <div class="row">
-           @foreach($allBook as $book)
-            <div class="col-md-2 mb-4">
-                <div class="card h-100">
-                    <img src="{{ asset($book->cover) }}" class="card-img-top" alt="img">
-                    <div class="card-body">
-                        <h6 class="card-title fw-semibold">{{ $book->title }}</h6>
-                        <span class="badge bg-secondary">{{ $book->category->name }}</span>
-                        <a href="{{ route('student.book.show', $book->id ) }}" class="btn btn-sm btn-purple mt-2">Lihat Detail</a>
+        <h2 class="section-title text-center mb-5 text-purple">All Book</h2>
+        <div class="row g-4">
+            @foreach ($books->take(6) as $book)
+            <div class="col-md-2">
+                <div class="card book-card h-100 bg-white border border-muted rounded-4">
+                    <img src="{{ asset($book->cover) }}" class="card-img-top rounded-top-4" alt="img">
+                    <div class="card-body text-center px-2 py-3">
+                        <h6 class="text-dark fw-semibold mb-2" style="font-size: 0.9rem;">{{ $book->title }}</h6>
+                        <span class="d-inline-block text-muted small">{{ $book->category->name }}</span>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
+        <div class="text-center mt-5">
+            <a href="{{ route('student.all.books') }}" class="btn btn-purple btn-lg rounded-pill px-5 py-2">
+                Lihat Semua Buku
+            </a>            
+        </div>
     </div>
 </section>
+{{-- end buku ALL --}}
+
+{{-- js --}}
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // agar animasi 1x saja
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+</script>
 
 @endsection
